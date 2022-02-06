@@ -15,15 +15,20 @@
             color="basil"
             grow
           >
-            <v-tab v-for="item in items" :key="item">
-              {{ item }}
+            <v-tab v-for="i in items" :key="i">
+              {{ i.item }}
             </v-tab>
           </v-tabs>
 
           <v-tabs-items v-model="tab">
-            <v-tab-item v-for="item in items" :key="item">
-              <v-card color="basil" flat>
-                <v-card-text>{{ text }}</v-card-text>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text> <fetchpush /> </v-card-text>
+              </v-card>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text> <fetchfetch /> </v-card-text>
               </v-card>
             </v-tab-item>
           </v-tabs-items>
@@ -34,13 +39,36 @@
 </template>
 
 <script>
+import fetchpush from './fetchpush.vue'
+import fetchfetch from './fetchfetch.vue'
 export default {
   name: 'HelloWorld',
+  components: {
+    fetchpush,
+    fetchfetch,
+  },
 
   data: () => ({
     tab: null,
-    items: ['Appetizers', 'Entrees', 'Deserts', 'Cocktails'],
-    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+
+    items: [
+      {
+        item: 'push',
+        text: 'fetchpush',
+      },
+      {
+        item: 'fetch',
+        text: 'Lorem ipsum dolor sit amet, t',
+      },
+      {
+        item: 'axios',
+        text: 'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt',
+      },
+      {
+        item: 'firebase',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt lrorem de lorem',
+      },
+    ],
   }),
 }
 </script>
