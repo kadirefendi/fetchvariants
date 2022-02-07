@@ -1,15 +1,15 @@
 <template>
-  <hello-world />
+  <fetch-parent />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import FetchParent from '../components/fetchParent.vue'
 
-  export default {
-    name: 'Home',
+export default {
+  name: 'Home',
 
-    components: {
-      HelloWorld,
-    },
-  }
+  components: {
+    FetchParent,
+  },
+}
 </script>

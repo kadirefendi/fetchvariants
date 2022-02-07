@@ -5,8 +5,8 @@
         Text any item
         <v-text-field
           label="Input"
-          @keypress.enter="itemFetchPost"
-          v-model="itemsync"
+          @keypress.enter="axiosFetchPost"
+          v-model="itemsync.item"
           class="mt-6"
         ></v-text-field>
       </v-col>
@@ -34,29 +34,34 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data: () => ({
     items: [],
-    itemsync: '',
+    itemsync: {
+      id: null,
+      item: '',
+    },
+    newResult: null,
   }),
-  created() {
-    fetch('http://localhost:3000/data')
-      .then((res) => res.json())
-      .then((data) => (this.items = data))
+  mounted() {
+    axios
+      .get('http://localhost:3000/data')
+      .then((res) => (this.items = res.data))
   },
+  //   created() {
+  //     axios('http://localhost:3000/data')
+  //       .then((res) => res.json())
+  //       .then((data) => console.log(data.data))
+  //   },
 
   methods: {
-    async itemFetchPost() {
-      console.log(this.itemsync)
-      await fetch('http://localhost:3000/data', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          item: this.itemsync,
-        }),
-      }).then((res) => res.json())
+    axiosFetchPost() {
+      axios
+        .post('http://localhost:3000/data', {
+          item: this.itemsync.item,
+        })
+        .then((res) => (this.newResult = res.data))
     },
   },
 }

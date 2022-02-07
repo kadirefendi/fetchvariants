@@ -5,7 +5,7 @@
         <v-card color="basil">
           <v-card-title class="text-center justify-center py-6">
             <h1 class="font-weight-bold text-h2 basil--text">
-              Data Fetching Variants
+              Data Fetch Variants
             </h1>
           </v-card-title>
 
@@ -31,6 +31,11 @@
                 <v-card-text> <fetchfetch /> </v-card-text>
               </v-card>
             </v-tab-item>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text> <fetchaxios /> </v-card-text>
+              </v-card>
+            </v-tab-item>
           </v-tabs-items>
         </v-card>
       </v-col>
@@ -41,11 +46,13 @@
 <script>
 import fetchpush from './fetchpush.vue'
 import fetchfetch from './fetchfetch.vue'
+import fetchaxios from './fetchaxios.vue'
 export default {
   name: 'HelloWorld',
   components: {
     fetchpush,
     fetchfetch,
+    fetchaxios,
   },
 
   data: () => ({
