@@ -61,7 +61,8 @@ export default {
         .post('http://localhost:3000/data', {
           item: this.itemsync.item,
         })
-        .then((res) => (this.items = res.data))
+        .then((res) => res.data)
+      this.items
       this.itemsync.item = ''
     },
   },
