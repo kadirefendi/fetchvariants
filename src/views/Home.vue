@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import FetchParent from '../components/fetchParent.vue'
+import FetchParent from '../components/FetchParent.vue'
 
 export default {
   name: 'Home',
