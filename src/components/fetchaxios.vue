@@ -62,6 +62,7 @@ export default {
           item: this.itemsync.item,
         })
         .then((res) => (this.newResult = res.data))
+      this.itemsync.item = ''
     },
   },
 }
