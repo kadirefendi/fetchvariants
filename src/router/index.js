@@ -19,11 +19,6 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
-  {
-    path: 'variants',
-    name: 'Variants',
-    component: () => import('../views/Variants.vue'),
-  },
 ]
 
 const router = new VueRouter({

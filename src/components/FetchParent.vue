@@ -2,19 +2,12 @@
   <v-container>
     <v-row class="d-flex justify-center mt-12">
       <v-col cols="8">
-        <v-card color="basil">
+        <v-card>
           <v-card-title class="text-center justify-center py-6">
-            <h1 class="font-weight-bold text-h2 basil--text">
-              Data Fetch Variants
-            </h1>
+            <h1 class="font-weight-bold text-h2">Data Fetch Variants</h1>
           </v-card-title>
 
-          <v-tabs
-            v-model="tab"
-            background-color="transparent"
-            color="basil"
-            grow
-          >
+          <v-tabs v-model="tab" background-color="transparent" grow>
             <v-tab v-for="i in items" :key="i">
               {{ i.item }}
             </v-tab>
@@ -70,10 +63,6 @@ export default {
       {
         item: 'axios',
         text: 'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt',
-      },
-      {
-        item: 'firebase',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt lrorem de lorem',
       },
     ],
   }),
