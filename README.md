@@ -1,19 +1,23 @@
 # fetchdata
 
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
-npm run serve
+npm start
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+In this project we try to fetch data with variations.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+First tab; made with Js array.push() method.
+
+![Fetch](src/assets/fetch.gif)
+
+Second tab made with Js Fetch API. (Get & Post)
+
+Third tab made with Axios.
